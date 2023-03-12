@@ -11,6 +11,7 @@
     software.
     The aim is to work on GUI. Menu, scrolling menu, button (radio or check).
     Use and change tool, and so on.
+
 ## 📖 Documentation
     - Compilation : make
     - Start : ./my_paint
