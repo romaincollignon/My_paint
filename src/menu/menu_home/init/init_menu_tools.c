@@ -23,14 +23,14 @@ void suite_init_rubber_choose_form(i_m_h *info_menu_home)
     sfImage *img_1 = sfImage_createFromFile("./res/icons_geo/carre.png");
     sfTexture *textu_1 = sfTexture_createFromImage(img_1, NULL);
     sfSprite* tmp_sprite_1 = sfSprite_create();
-    sfSprite_setTexture(tmp_sprite_1, textu_1, NULL);
+    sfSprite_setTexture(tmp_sprite_1, textu_1, sfFalse);
     sfSprite_setPosition(tmp_sprite_1, (sfVector2f){120, 705});
     sfSprite_setScale(tmp_sprite_1, (sfVector2f){0.08, 0.08});
     info_menu_home->info_display.icon_rubber[0] = tmp_sprite_1;
     sfImage *img_2 = sfImage_createFromFile("./res/icons_geo/cercle.png");
     sfTexture *textu_2 = sfTexture_createFromImage(img_2, NULL);
     sfSprite* tmp_sprite_2 = sfSprite_create();
-    sfSprite_setTexture(tmp_sprite_2, textu_2, NULL);
+    sfSprite_setTexture(tmp_sprite_2, textu_2, sfFalse);
     sfSprite_setPosition(tmp_sprite_2, (sfVector2f){120, 705});
     sfSprite_setScale(tmp_sprite_2, (sfVector2f){0.08, 0.08});
     info_menu_home->info_display.icon_rubber[1] = tmp_sprite_2;

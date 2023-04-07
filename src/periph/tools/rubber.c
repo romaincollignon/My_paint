@@ -38,7 +38,7 @@ void update_image_rubber(sfWindow *w, i_m_h *info_menu_home, int pos_y,
     sfTexture_updateFromImage(info_menu_home->info_display.tmp_textu,
         info_menu_home->info_display.image_default, 0, 0);
     sfSprite_setTexture(info_menu_home->info_display.fond_default,
-        info_menu_home->info_display.tmp_textu, NULL);
+        info_menu_home->info_display.tmp_textu, sfFalse);
 }
 
 void edit_size_ruber(sfWindow *w, i_m_h *info_menu_home, int pos_y,

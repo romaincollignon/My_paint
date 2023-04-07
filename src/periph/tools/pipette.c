@@ -41,7 +41,7 @@ void periph_tools_pipette(sfWindow *w, i_m_h *info_menu_home)
         int zone_01[4] = {185, 10000, 130, 10000};
         if (verif_zone(zone_01, w) == 0)
             return;
-            getpixel(info_menu_home, mouse,
+        getpixel(info_menu_home, mouse,
             sfSprite_getScale(info_menu_home->info_display.fond_default));
     }
 }

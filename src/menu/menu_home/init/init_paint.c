@@ -32,7 +32,7 @@ static void suite_init_paint(i_m_h *info_menu_home, i_g *info_game)
         info_menu_home->info_display.color_rubber = sfWhite;
     } sfTexture *textu = sfTexture_createFromImage(img, NULL);
     sfSprite* tmp_sprite = sfSprite_create();
-    sfSprite_setTexture(tmp_sprite, textu, NULL);
+    sfSprite_setTexture(tmp_sprite, textu, sfFalse);
     sfSprite_setPosition(tmp_sprite, (sfVector2f){180, 130});
     info_menu_home->info_display.scale = 0.74;
     sfSprite_setScale(tmp_sprite, (sfVector2f){0.74, 0.74});
@@ -64,6 +64,45 @@ void init_menu_paint(i_m_h *info_menu_home)
     info_menu_home->info_display.txt[4] = text;
 }
 
+void malloc_form_paint(i_m_h *info_menu_home)
+{
+    info_menu_home->info_display.coldown_paint = malloc(sizeof(sfClock*));
+    info_menu_home->info_display.coldown_paint = sfClock_create();
+    info_menu_home->info_display.icon_paint = malloc(sizeof(sfSprite*) * 2);
+    info_menu_home->info_display.icon_paint[0] = malloc(sizeof(sfSprite*));
+    info_menu_home->info_display.icon_paint[1] = malloc(sizeof(sfSprite*));
+    info_menu_home->info_display.choose_paint = 0;
+    info_menu_home->info_display.form_paint = malloc(sizeof(sfRectangleShape*)
+        * 2);
+    info_menu_home->info_display.form_paint[0] =
+        malloc(sizeof(sfRectangleShape*));
+    info_menu_home->info_display.form_paint[1] =
+        malloc(sizeof(sfRectangleShape*));
+    info_menu_home->info_display.form_paint[0] =
+    init_bar(info_menu_home, 1, (sfVector2f){60, 60}, (sfVector2f){110, 545});
+    info_menu_home->info_display.form_paint[1] =
+    init_bar(info_menu_home, 2, (sfVector2f){50, 50}, (sfVector2f){115, 550});
+}
+
+void init_form_paint(i_m_h *info_menu_home)
+{
+    malloc_form_paint(info_menu_home);
+    sfImage *img_1 = sfImage_createFromFile("./res/icons_geo/carre.png");
+    sfTexture *textu_1 = sfTexture_createFromImage(img_1, NULL);
+    sfSprite* tmp_sprite_1 = sfSprite_create();
+    sfSprite_setTexture(tmp_sprite_1, textu_1, sfFalse);
+    sfSprite_setPosition(tmp_sprite_1, (sfVector2f){120, 555});
+    sfSprite_setScale(tmp_sprite_1, (sfVector2f){0.08, 0.08});
+    info_menu_home->info_display.icon_paint[0] = tmp_sprite_1;
+    sfImage *img_2 = sfImage_createFromFile("./res/icons_geo/cercle.png");
+    sfTexture *textu_2 = sfTexture_createFromImage(img_2, NULL);
+    sfSprite* tmp_sprite_2 = sfSprite_create();
+    sfSprite_setTexture(tmp_sprite_2, textu_2, sfFalse);
+    sfSprite_setPosition(tmp_sprite_2, (sfVector2f){120, 555});
+    sfSprite_setScale(tmp_sprite_2, (sfVector2f){0.08, 0.08});
+    info_menu_home->info_display.icon_paint[1] = tmp_sprite_2;
+}
+
 void init_paint(i_m_h *info_menu_home, i_g *info_game)
 {
     info_menu_home->info_display.fond_default =
@@ -73,4 +112,5 @@ void init_paint(i_m_h *info_menu_home, i_g *info_game)
     suite_init_paint(info_menu_home, info_game);
     info_menu_home->info_display.size_paint = 20;
     init_menu_paint(info_menu_home);
+    init_form_paint(info_menu_home);
 }

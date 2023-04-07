@@ -74,7 +74,6 @@ void calc_r_windo(sfRenderWindow *w, i_m_h *info_menu_home)
 sfColor my_getpixel(sfRenderWindow *w, sfImage *img, sfVector2i mouse)
 {
     sfVector2u size_w = sfWindow_getSize(w);
-    sfVector2u size = sfImage_getSize(img);
     float width = size_w.x;
     float height = size_w.y;
     float radio_x = width / 1920;

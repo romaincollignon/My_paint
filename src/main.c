@@ -67,5 +67,6 @@ int main(int ac, char **av, char **env)
         sfResize, NULL);
     sfRenderWindow_setFramerateLimit(window, 300);
     int result_main = second_main(window);
+    sfRenderWindow_destroy(window);
     return result_main;
 }

@@ -58,6 +58,11 @@ void suite_all_display(sfRenderWindow *w, i_m_h *info_menu_home)
 void all_display(sfRenderWindow *w, i_m_h *info_menu_home)
 {
     if (info_menu_home->click_bouton_tools == 1) {
+        for (int n = 0; n < 2; n++)
+            sfRenderWindow_drawRectangleShape(w,
+                info_menu_home->info_display.form_paint[n], NULL);
+        sfRenderWindow_drawSprite(w, info_menu_home->info_display.icon_paint[
+            info_menu_home->info_display.choose_paint], NULL);
         for (int n = 4; n < 7; n++)
             sfRenderWindow_drawRectangleShape(w,
                 info_menu_home->info_display.menu_tools[n], NULL);
@@ -68,12 +73,10 @@ void all_display(sfRenderWindow *w, i_m_h *info_menu_home)
                 info_menu_home->info_display.form_rubber[n], NULL);
         sfRenderWindow_drawSprite(w, info_menu_home->info_display.icon_rubber[
             info_menu_home->info_display.choose_rubber], NULL);
-        for (int n = 1; n < 4; n++)
-            sfRenderWindow_drawRectangleShape(w,
+        for (int n = 1; n < 4; n++) sfRenderWindow_drawRectangleShape(w,
                 info_menu_home->info_display.menu_tools[n], NULL);
         sfRenderWindow_drawText(w, info_menu_home->info_display.txt[3], NULL);
-    }
-    suite_all_display(w, info_menu_home);
+    } suite_all_display(w, info_menu_home);
 }
 
 void suite_display_home(sfRenderWindow *w, i_m_h *info_menu_home)

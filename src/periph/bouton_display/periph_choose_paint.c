@@ -87,10 +87,10 @@ void periph_choose_paint(sfWindow *w, i_g *info_game, i_m_h *info_menu_home,
             act);
         if (act.type == sfEvtClosed) {
             info_game->env = 0;
-            return 0;
+            return;
         } if (act.type == sfEvtKeyPressed && act.key.code == sfKeyEscape) {
             info_game->env = 0;
-            return 0;
+            return;
         }
     }
 }

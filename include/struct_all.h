@@ -37,6 +37,10 @@
         int size_paint;
         int change_tools;
         sfClock *coldown;
+        sfClock *coldown_paint;
+        sfSprite **icon_paint;
+        sfRectangleShape **form_paint;
+        int choose_paint;
     } i_d;
 
     typedef struct info_menu {

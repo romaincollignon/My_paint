@@ -74,7 +74,7 @@ void init_rgbcolor(i_m_h *info_menu_home)
     sfImage *img = sfImage_createFromFile("./res/rgb_color.jpeg");
     sfTexture *textu = sfTexture_createFromImage(img, NULL);
     sfSprite* tmp_sprite = sfSprite_create();
-    sfSprite_setTexture(tmp_sprite, textu, NULL);
+    sfSprite_setTexture(tmp_sprite, textu, sfFalse);
     sfSprite_setPosition(tmp_sprite, (sfVector2f){150, 500});
     sfSprite_setScale(tmp_sprite, (sfVector2f){0.6, 0.6});
     info_menu_home->image_color = tmp_sprite;
